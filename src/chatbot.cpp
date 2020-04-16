@@ -1,4 +1,3 @@
-#include <iostream>
 #include <random>
 #include <algorithm>
 #include <ctime>
@@ -79,6 +78,7 @@ ChatBot& ChatBot::operator= (ChatBot&& cb) noexcept {
     if(this == &cb){
         return *this;
     }
+    delete _image; 
     _image = cb._image;
     _currentNode = cb._currentNode;
      _rootNode = cb._rootNode;

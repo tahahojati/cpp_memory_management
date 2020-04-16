@@ -11,7 +11,8 @@
 #include "chatbot.h"
 #include "chatlogic.h"
 
-
+ChatLogic::ChatLogic(){}
+ChatLogic::~ChatLogic(){}
 template <typename T>
 void ChatLogic::AddAllTokensToElement(std::string tokenID, tokenlist &tokens, T &element)
 {
@@ -136,7 +137,6 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
                             GraphEdge *edge = new GraphEdge(id);
                             edge->SetChildNode(childNode -> get());
                             edge->SetParentNode(parentNode -> get());
-                            _edges.push_back(edge);
 
                             // find all keywords for current node
                             AddAllTokensToElement("KEYWORD", tokens, *edge);
